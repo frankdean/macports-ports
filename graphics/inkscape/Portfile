@@ -75,8 +75,7 @@ depends_lib-append  port:desktop-file-utils \
                     port:py${python_version}-lxml \
                     port:py${python_version}-numpy
 
-patchfiles          poppler-22.03.0.patch
-
+patchfiles          poppler-22.04.0.patch
 post-patch {
     reinplace "s|\"python-interpreter\", *\{\"python3\"|\"python-interpreter\", \{\"python${python_major}.${python_minor}\"|g" ${worksrcpath}/src/extension/implementation/script.cpp
     reinplace "s|COMMAND python3 |COMMAND ${prefix}/bin/python${python_major}.${python_minor} |g" \
