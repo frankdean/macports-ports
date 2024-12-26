@@ -1,0 +1,11 @@
+--- m4/ax_lib_mapnik.m4~	2024-06-21 02:56:34
++++ m4/ax_lib_mapnik.m4	2024-12-26 23:44:48
+@@ -40,7 +40,7 @@
+ AC_DEFUN([AX_LIB_MAPNIK],
+ [
+     AC_ARG_WITH([libmapnik],
+-        AC_HELP_STRING([--with-libmapnik=@<:@ARG@:>@],
++        AS_HELP_STRING([--with-libmapnik=@<:@ARG@:>@],
+             [use mapnik library @<:@default=yes@:>@, optionally specify path to mapnik-config]
+         ),
+         [
