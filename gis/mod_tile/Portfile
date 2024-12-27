@@ -32,7 +32,8 @@ boost.version       1.76
 
 depends_build       port:apache2 \
                     port:carto \
-                    port:iniparser
+                    port:iniparser \
+                    port:pkgconfig
 
 depends_lib         port:curl \
                     port:freetype \
