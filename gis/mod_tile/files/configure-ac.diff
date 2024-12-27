@@ -1,5 +1,5 @@
 --- configure.ac~	2024-12-27 15:58:57
-+++ configure.ac	2024-12-27 15:57:31
++++ configure.ac	2024-12-27 16:48:23
 @@ -4,11 +4,9 @@
  # Define mod_tile version number
  m4_define([mod_tile_version], [0.7.2])
@@ -52,7 +52,7 @@
 +PKG_CHECK_MODULES([MAPNIK], [libmapnik >= 4],[
       AC_DEFINE([HAVE_MAPNIK], [1])
 -     AC_SUBST([MAPNIK_LDFLAGS], [${MAPNIK_LIBS}])
-+     AC_SUBST([MAPNIK_LDFLAGS], ["${MAPNIK_LIBS}"])
++     AC_SUBST([MAPNIK_LDFLAGS], [MAPNIK_LIBS])
      ], [AX_LIB_MAPNIK]
  )
  AX_ENABLE_LIBMEMCACHED
