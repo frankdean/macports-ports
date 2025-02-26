@@ -84,7 +84,8 @@ are available under `@PREFIX@/lib/mapnik/fonts`.  Download the fonts and
 create a symbolic to their installed location:
 
 1.	Download a zip containing the fonts from
-    <https://www.google.com/get/noto/help/install/>
+    <https://github.com/google/fonts> - there is a link under `Download All
+    Google Fonts` - or from <https://github.com/notofonts/notofonts.github.io/releases>.
 
 		$ sudo mkdir -p /usr/local/share/fonts/noto
 		$ sudo chown $USER /usr/local/share/fonts/noto
@@ -97,6 +98,26 @@ The debug information written to `@PREFIX@/var/lib/renderd/renderd.log`
 during the daemon startup reports whether fonts are loaded successfully or
 not.  The configuration is fundamentally a priority preference for normal,
 bold and oblique fonts.  It is expected some font varieties will not be found.
+
+**Note:** sorting out the fonts you want from the downloads is cumbersome.
+Installing the `findutils` package and using `gfind` (needed for using
+extended regular expresssions) can ease the process.
+
+E.g. list how many files the release from
+[notofonts releases](https://github.com/notofonts/notofonts.github.io/releases)
+contain:
+
+	$ gfind ~/Downloads/notofonts.github.io-noto-monthly-release-2025.02.01/ \
+	-type f -regextype posix-extended \
+	-regex '.*/googlefonts/ttf/Noto(Sans|Serif).*\.ttf' | \
+	wc -l
+
+and copying those files to the font folder:
+
+	$ gfind ~/Downloads/notofonts.github.io-noto-monthly-release-2025.02.01/
+	-type f -regextype posix-extended -regex
+	'.*/googlefonts/ttf/Noto(Sans|Serif).*\.ttf' \
+	-exec cp '{}' /usr/local/share/fonts/noto/ \;
 
 ## Changing the Default Database name
 

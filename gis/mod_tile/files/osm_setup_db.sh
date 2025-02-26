@@ -37,9 +37,9 @@
 #      OSM2PGSQL_RAM=4096 OSM2PGSQL_CPUS=4 ./osm_setup_db.sh
 #
 # Before running this script, you need to ensure that PostgreSQL has been
-# configured for the 'nobody' to be able to access the 'gis' database without
+# configured for the 'nobody' user to be able to access the 'gis' database without
 # a password.  Refer to the Ident Authentication section in the PostgreSQL
-# Manual, https://www.postgresql.org/docs/12/auth-ident.html to understand any
+# Manual, https://www.postgresql.org/docs/16/auth-ident.html to understand any
 # security implications of this approach.
 #
 # The simplest way to configure this is to add an 'ident' method for 'gis' and
@@ -56,7 +56,7 @@
 #
 # Reload the PostgreSQL server configuration after making the change.  E.g
 #
-# sudo port reload  postgresql12-server
+# sudo port reload  postgresql16-server
 #
 # If the file specified by $PBF_FILENAME exists, it is imported as-is.  If it
 # does not exist, it is assumed to be a file hosted at $PBF_DOWNLOAD_BASE_URL,
